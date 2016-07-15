@@ -3,15 +3,16 @@ import ReactDOM from 'react-dom';
 
 import './styles.css';
 
-import TwitterTest from './Components/TwitterWrapper';
+import TwitterWrapper from './Components/TwitterWrapper';
 
-
+  var user_id = '18055737',
+  screen_name = 'johngreen';
 class App extends React.Component {
 
   render() {
     return (
       <div>
-        <TwitterTest />
+        <TwitterWrapper screen_name={"johngreen"} user_id={18055737}/>
       </div>
     )
   }

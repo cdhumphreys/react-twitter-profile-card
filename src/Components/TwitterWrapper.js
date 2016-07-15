@@ -10,7 +10,7 @@ class TwitterWrapper extends React.Component {
     this.state = {
       data: ''
     };
-    console.log(twitterConfig);
+
     this.makeTwitterPromise = function(user_id, screen_name, count, base_url) {
       const baseTwitterApiUrl = 'http://54.229.56.139/proxy/twitter_proxy.php';
 
@@ -50,16 +50,15 @@ class TwitterWrapper extends React.Component {
 
 
   componentWillMount() {
-    var  user_id = '18055737',
-      screen_name = 'johngreen',
-      count = 5,
+    var count = 5,
       base_url = 'users/lookup.json';
 
-    var newTwitterPromise = this.makeTwitterPromise(user_id, screen_name, count, base_url);
+      console.log(this.props);
+    var newTwitterPromise = this.makeTwitterPromise(this.props.user_id, this.props.screen_name, count, base_url);
 
      newTwitterPromise.then((response) => {
          console.log("Success!");
-         
+
          const data = JSON.parse(response)[0];
 
          this.setState({
@@ -74,9 +73,17 @@ class TwitterWrapper extends React.Component {
   }
 
   render() {
+    console.log(this.state.data);
     return (
       <div>
-        <TwitterCard {...this.state.data}/>
+        <TwitterCard
+          profile_image_url={this.state.data.profile_image_url}
+          screen_name={this.state.data.screen_name}
+          description={this.state.data.description}
+          favourites_count={this.state.data.favourites_count}
+          followers_count={this.state.data.followers_count}
+          friends_count={this.state.data.friends_count}
+        />
       </div>
     )
   }
