@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "9a13985481e20b8b324a"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "c23436f76c74eeef7a95"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -604,6 +604,10 @@
 	
 	__webpack_require__(173);
 	
+	var _TwitterTest = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./Components/TwitterTest\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	
+	var _TwitterTest2 = _interopRequireDefault(_TwitterTest);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -611,8 +615,6 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	// require('./styles.css');
 	
 	var App = function (_React$Component) {
 	  _inherits(App, _React$Component);
@@ -629,11 +631,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(
-	          'span',
-	          null,
-	          ' Its alive again!'
-	        )
+	        _react2.default.createElement(_TwitterTest2.default, null)
 	      );
 	    }
 	  }]);
@@ -21710,7 +21708,7 @@
 	
 	
 	// module
-	exports.push([module.id, "body {\n  background-color: red;\n}\n", ""]);
+	exports.push([module.id, "", ""]);
 	
 	// exports
 
