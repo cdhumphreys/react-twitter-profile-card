@@ -53,14 +53,16 @@ class TwitterWrapper extends React.Component {
     var count = 5,
       base_url = 'users/lookup.json';
 
-      console.log(this.props);
+
     var newTwitterPromise = this.makeTwitterPromise(this.props.user_id, this.props.screen_name, count, base_url);
 
      newTwitterPromise.then((response) => {
-         console.log("Success!");
-
          const data = JSON.parse(response)[0];
 
+         const imgUrl = data.profile_image_url;
+         const uncompressedProfileImg = imgUrl.slice(0,imgUrl.indexOf('_normal')) + imgUrl.slice(imgUrl.indexOf('_normal') + ('_normal').length);
+
+         data.uncompressedProfileImg = uncompressedProfileImg;
          this.setState({
            data
          });
@@ -73,11 +75,13 @@ class TwitterWrapper extends React.Component {
   }
 
   render() {
-    console.log(this.state.data);
+
+
     return (
+
       <div>
         <TwitterCard
-          profile_image_url={this.state.data.profile_image_url}
+          profile_image_url={this.state.data.uncompressedProfileImg}
           screen_name={this.state.data.screen_name}
           description={this.state.data.description}
           favourites_count={this.state.data.favourites_count}
@@ -87,6 +91,7 @@ class TwitterWrapper extends React.Component {
       </div>
     )
   }
+
 }
 
 export default TwitterWrapper;
