@@ -58,7 +58,7 @@ class TwitterWrapper extends React.Component {
 
      newTwitterPromise.then((response) => {
          const data = JSON.parse(response)[0];
-
+         console.log(data);
          const imgUrl = data.profile_image_url;
          const uncompressedProfileImg = imgUrl.slice(0,imgUrl.indexOf('_normal')) + imgUrl.slice(imgUrl.indexOf('_normal') + ('_normal').length);
 
@@ -78,17 +78,16 @@ class TwitterWrapper extends React.Component {
 
 
     return (
-
-      <div>
-        <TwitterCard
-          profile_image_url={this.state.data.uncompressedProfileImg}
+        <TwitterCard className="twitter-card-wrapper"
+          author_name={this.state.data.name}
           screen_name={this.state.data.screen_name}
+          profile_image_url={this.state.data.uncompressedProfileImg}
           description={this.state.data.description}
-          favourites_count={this.state.data.favourites_count}
+          num_likes={this.state.data.favourites_count}
           followers_count={this.state.data.followers_count}
-          friends_count={this.state.data.friends_count}
+          following_count={this.state.data.friends_count}
+          num_tweets={this.state.data.statuses_count}
         />
-      </div>
     )
   }
 

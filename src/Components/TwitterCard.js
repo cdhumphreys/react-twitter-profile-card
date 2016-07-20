@@ -1,6 +1,14 @@
 import React from 'react';
 
 class TwitterCard extends React.Component {
+  getRandomRGB() {
+    const red = Math.floor((Math.random() * 255) + 1);
+    const green = Math.floor((Math.random() * 255) + 1);
+    const blue = Math.floor((Math.random() * 255) + 1);
+    console.log(red,green,blue);
+    return `rgba(${red},${green},${blue},0.4)`;
+
+  }
   render() {
     console.log(this.props.profile_image_url);
     return (
@@ -8,7 +16,7 @@ class TwitterCard extends React.Component {
         <div className="image-container">
           <div className="profile-image" style={
             {
-              backgroundImage: `url(${this.props.profile_image_url})`
+              backgroundImage: `linear-gradient(to bottom,`+this.getRandomRGB()+`,`+this.getRandomRGB()+`), url(${this.props.profile_image_url})`
             }
           }>
           </div>
