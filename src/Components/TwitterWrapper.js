@@ -58,7 +58,7 @@ class TwitterWrapper extends React.Component {
 
      newTwitterPromise.then((response) => {
          const data = JSON.parse(response)[0];
-         console.log(data);
+         
          const imgUrl = data.profile_image_url;
          const uncompressedProfileImg = imgUrl.slice(0,imgUrl.indexOf('_normal')) + imgUrl.slice(imgUrl.indexOf('_normal') + ('_normal').length);
 

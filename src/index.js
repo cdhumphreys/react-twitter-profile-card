@@ -54,10 +54,10 @@ class App extends React.Component {
   render() {
 
   const twitterProfilesWrapped = this.makeTwitterElements();
-  console.log(this.state);
+  
     return (
       <div>
-        <form>
+        <form id="newCardForm">
           <input type="text" placeholder="Enter Your Screen Name" ref="input_screen_name"/>
           <input type="text" placeholder="Enter Your User ID" ref="input_user_id"/>
           <button onClick={this.clickHandler.bind(this)}>Make</button>
