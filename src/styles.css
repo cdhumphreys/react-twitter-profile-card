@@ -6,11 +6,29 @@
   left: 0;
 }
 
+#newCardForm {
+  font-family: 'Roboto', sans-serif;
+}
 #newCardForm input {
   display: block;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+#newCardForm div {
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+#newCardForm button, #newCardForm label {
+  margin-left: 10px;
 }
 
+#newCardForm label {
+  font-size: 14px;
+}
 
+#newCardForm input[type=text]:focus {
+    background-color: rgba(0,0,255,0.2);
+}
 
 .card-container {
   position: relative;

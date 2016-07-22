@@ -66,8 +66,11 @@ class App extends React.Component {
     return (
       <div>
         <form id="newCardForm">
-          <input type="text" placeholder="Enter Your Screen Name" ref="input_screen_name"/>
-          <input type="text" placeholder="Enter Your User ID" ref="input_user_id"/>
+          <div> Create a Twitter Card! </div>
+          <label for="input_screen_name"> Screen Name: </label>
+          <input type="text" id="input_screen_name" placeholder="Enter a Screen Name" ref="input_screen_name"/>
+          <label for="input_user_id"> User ID: </label>
+          <input type="text" id="input_user_id" placeholder="Enter a User ID" ref="input_user_id"/>
           <button onClick={this.clickHandler.bind(this)}>Make</button>
         </form>
         {twitterProfilesWrapped}
