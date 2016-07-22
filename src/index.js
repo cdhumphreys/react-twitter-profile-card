@@ -20,6 +20,14 @@ class App extends React.Component {
 
 
   }
+  getRandomRGB() {
+    const red = Math.floor((Math.random() * 255) + 1);
+    const green = Math.floor((Math.random() * 255) + 1);
+    const blue = Math.floor((Math.random() * 255) + 1);
+    return `rgba(${red},${green},${blue},0.4)`;
+
+  }
+
   clickHandler(e) {
     e.preventDefault();
 
@@ -46,7 +54,7 @@ class App extends React.Component {
 
   makeTwitterElements() {
     return this.state.profiles.map((profile, index) => {
-        return <TwitterWrapper screen_name={profile.screen_name} user_id={profile.user_id} key={index} />
+        return <TwitterWrapper screen_name={profile.screen_name} user_id={profile.user_id} key={index} rgb1={this.getRandomRGB()} rgb2={this.getRandomRGB()}/>
       });
 
   }
@@ -54,7 +62,7 @@ class App extends React.Component {
   render() {
 
   const twitterProfilesWrapped = this.makeTwitterElements();
-  
+
     return (
       <div>
         <form id="newCardForm">
